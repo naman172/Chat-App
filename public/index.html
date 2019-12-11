@@ -9,8 +9,44 @@
 <body>
     <p>Welcome to the chatApp</p>
 
+    <form id="message-form">
+        <input type="text" name="message" placeholder="Message">
+        <input type="submit" id="submit-btn">
+        <button type="button" id="sendLocation">Send Location</button>
+    </form>
+
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript"  src="js/index.js"></script>
+    <script type="text/javascript"  src="js/libs/moment.js"></script>
+    <script type="text/javascript"  src="js/libs/mustache.js"></script>
 
+    <script type="text/template" id="message-template">
+        <li class="message">
+            <div class="message_from">
+                <h4>{{from}}</h4>
+                <span class="message_createdAt">
+                    {{createdAt}}
+                </span>
+            </div>
+            <div class="message_body">
+                <p>{{text}}</p>
+            </div>
+        </li>
+    </script>
+
+    <script type="text/template" id="location-message-template">
+        <li class="message">
+            <div class="message_from">
+                <h4>{{from}}</h4>
+                <span class="message_createdAt">
+                    {{createdAt}}
+                </span>
+            </div>
+            <div class="message_body">
+                <a href="{{url}}" target="_blank">My current location</a>
+            </div>
+        </li>
+    </script>
+    
 </body>
 </html>
