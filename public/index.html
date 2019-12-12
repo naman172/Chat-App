@@ -1,52 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>Document</title>
+
+    <link rel="text/stylesheet" href="./css/index.css">
+
 </head>
 <body>
-    <p>Welcome to the chatApp</p>
-
-    <form id="message-form">
-        <input type="text" name="message" placeholder="Message">
-        <input type="submit" id="submit-btn">
-        <button type="button" id="sendLocation">Send Location</button>
-    </form>
-
-    <script src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript"  src="js/index.js"></script>
-    <script type="text/javascript"  src="js/libs/moment.js"></script>
-    <script type="text/javascript"  src="js/libs/mustache.js"></script>
-
-    <script type="text/template" id="message-template">
-        <li class="message">
-            <div class="message_from">
-                <h4>{{from}}</h4>
-                <span class="message_createdAt">
-                    {{createdAt}}
-                </span>
+    <div>
+        <form action="./chat.html">
+            <div><h3>Join chat</h3></div>
+            <div>
+                <label>Display name : </label>
+                <input type="text" name="name" autofocus>
             </div>
-            <div class="message_body">
-                <p>{{text}}</p>
+            <div>
+                <label>Room name : </label>
+                <input type="text" name="room">
             </div>
-        </li>
-    </script>
+            <div>
+                <input type="submit" value="Join">
+            </div>
+        </form>
 
-    <script type="text/template" id="location-message-template">
-        <li class="message">
-            <div class="message_from">
-                <h4>{{from}}</h4>
-                <span class="message_createdAt">
-                    {{createdAt}}
-                </span>
-            </div>
-            <div class="message_body">
-                <a href="{{url}}" target="_blank">My current location</a>
-            </div>
-        </li>
-    </script>
+    </div>
     
 </body>
 </html>
